@@ -1,0 +1,18 @@
+<div class="recipe-container">
+  <h1 class="recipe-title">{{ nombre }}</h1>
+  <img
+    class="recipe-image"
+    alt="{{ nombre }}"
+    src="https://nutritionstudies.org/wp-content/uploads/2022/05/gallo-pinto-costa-rican-rice-and-beans.jpg"
+  />
+  <p class="recipe-description">{{ descripcion }}</p>
+  <h2 class="recipe-title-ingredient">Ingredientes</h2>
+  <ul class="recipe-list">
+    @for ( ingrediente of ingredientes; track ingrediente.id){
+    <li class="recipe-ingredients">
+      {{ ingrediente.nombre }}: {{ ingrediente.cantidad }}
+    </li>
+    }
+  </ul>
+  <button class="recipe-button">Ver Detalles</button>
+</div>

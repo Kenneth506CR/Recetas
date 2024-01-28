@@ -1,0 +1,97 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  margin: auto;
+  background-color: rgb(179, 204, 204);
+  border-radius: 15px;
+  align-items: center;
+  height: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
+
+.ingredient-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ingredient-group button {
+  margin-left: 10px;
+}
+
+.name-recipe {
+  width: 80%;
+}
+
+.description-recipe {
+  width: 80%;
+  height: 100px;
+  margin: 20px;
+  resize: none;
+}
+
+.button-delete,
+.button-add,
+.button-save {
+  cursor: pointer;
+  height: 27px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+.button-delete {
+  background-color: #a83c1b;
+}
+
+.button-add {
+  background-color: #5d7a18;
+}
+
+.button-save {
+  background-color: #5d7a18;
+  width: 40%;
+  height: 2rem;
+  border-radius: 2px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.button-delete:hover {
+  background-color: #bd4520;
+}
+
+.button-add:hover,
+.button-save:hover {
+  background-color: #7ba31f;
+}
+
+@media screen and (min-width: 1024px) {
+  form {
+    width: 42%;
+    padding: 0.5rem;
+  }
+
+  .name-recipe {
+    width: 65%;
+  }
+
+  .description-recipe {
+    width: 65%;
+  }
+}

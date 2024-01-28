@@ -1,0 +1,10 @@
+.footer-container {
+  background-color: black;
+  height: 4rem;
+  padding-top: 1.5rem;
+}
+
+.footer-text {
+  color: aliceblue;
+  text-align: center;
+}
