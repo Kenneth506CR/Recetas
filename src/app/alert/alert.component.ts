@@ -12,7 +12,7 @@ import { AgregarComponent } from '../agregar/agregar.component';
 export class AlertComponent {
   constructor(private modalSS: SwitchService) {}
 
-  /* @Input() message: string | undefined; */
+  @Input() message: string | undefined;
 
   closeModal() {
     this.modalSS.$modal.emit(false);

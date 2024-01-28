@@ -68,12 +68,15 @@
     </button>
   </div>
 
-  <button class="button-save" (click)="openModal()" type="submit">
+  <button
+    class="button-save"
+    (click)="[enviarMensaje(), openModal()]"
+    type="submit"
+  >
     Guardar
   </button>
   <div class="modal" *ngIf="modalSwitch == true">
-    <app-alert />
+    <app-alert [message]="message" />
   </div>
 </form>
-
 <app-footer></app-footer>

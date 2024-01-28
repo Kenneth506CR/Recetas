@@ -35,7 +35,7 @@ export class AgregarComponent {
     ingredients: this.fb.array([this.createIngredient()]),
   });
 
-  /*  @Input() message: string | undefined; */
+  message: string | undefined;
 
   modalSwitch: Boolean | undefined;
 
@@ -73,12 +73,12 @@ export class AgregarComponent {
     console.warn(this.recipeForm.value);
   }
 
-  /*   //Mensaje para el modal
+  //Mensaje para el modal
   enviarMensaje() {
     if (this.recipeForm.invalid) {
       this.message = 'Por favor, llena todos los campos.';
     } else {
       this.message = 'La receta se guardó correctamente.';
     }
-  } */
+  }
 }
