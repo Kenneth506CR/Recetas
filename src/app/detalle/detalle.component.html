@@ -1,1 +1,13 @@
-
+<div class="detalle-container">
+  <h2>{{ receta.name }}</h2>
+  <img [src]="receta.image" alt="Imagen de la receta" />
+  <p>{{ receta.description }}</p>
+  <ul class="ingredient-list">
+    <li *ngFor="let ingredient of receta.ingredients">
+      <input type="checkbox" id="ingrediente{{ ingredient.ingredient }}" />
+      <label for="ingrediente{{ ingredient.ingredient }}">{{
+        ingredient.ingredient
+      }}</label>
+    </li>
+  </ul>
+</div>

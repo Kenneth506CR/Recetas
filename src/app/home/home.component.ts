@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SwitchService } from '../services/switch.service';
 import { OnInit } from '@angular/core';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ import { OnInit } from '@angular/core';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
+    DetalleComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

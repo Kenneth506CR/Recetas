@@ -11,8 +11,11 @@
     >
   </section>
   <section>
-    <app-receta *ngFor="let receta of recetas" [receta]="receta"></app-receta>
+    <app-detalle *ngFor="let receta of recetas" [receta]="receta"></app-detalle>
   </section>
+  <!--   <section>
+    <app-receta *ngFor="let receta of recetas" [receta]="receta"></app-receta>
+  </section> -->
 </main>
 
 <app-footer />
