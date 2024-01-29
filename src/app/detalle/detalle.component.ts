@@ -14,20 +14,19 @@ import { SwitchService } from '../services/switch.service';
   styleUrl: './detalle.component.css',
 })
 export class DetalleComponent {
-  @Input() receta: any;
+  receta: any; // No es un array
+
   constructor(
-    private route: ActivatedRoute,
-    private recetasService: SwitchService
+    private switchService: SwitchService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      const recetas = localStorage.getItem('recetas');
-      if (recetas !== null) {
-        const recetasObj = JSON.parse(recetas);
-        this.receta = recetasObj.find((receta: any) => receta.id === id);
-      }
+    const storedReceta = localStorage.getItem('recetaSeleccionada');
+
+    if (storedReceta !== null) {
+      this.receta = JSON.parse(storedReceta);
     }
   }
 }

@@ -34,13 +34,23 @@ import { BuscadorComponent } from '../buscador/buscador.component';
 })
 export class HomeComponent {
   recetas: any[] = [];
+  recetaSeleccionada: any[] = [];
 
-  constructor(private modalSS: SwitchService, private route: ActivatedRoute) {}
+  constructor(
+    private modalSS: SwitchService,
+    private route: ActivatedRoute,
+    private switchService: SwitchService
+  ) {}
 
   ngOnInit() {
     // Recuperar los datos de LocalStorage
     const recetas = localStorage.getItem('recetas');
     this.recetas = recetas ? JSON.parse(recetas) : [];
+
+    // Suscribirse a sharedData para recibir las actualizaciones de la receta seleccionada
+    this.switchService.sharedData.subscribe((data) => {
+      this.recetaSeleccionada = data;
+    });
 
     console.log(this.recetas);
   }

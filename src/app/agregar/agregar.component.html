@@ -6,7 +6,7 @@
     class="name-recipe"
     type="text"
     formControlName="name"
-    placeholder="Ingresar nombre..."
+    placeholder="Ingresar nombre de receta"
   />
   <div
     *ngIf="
@@ -21,7 +21,7 @@
   <textarea
     class="description-recipe"
     formControlName="description"
-    placeholder="Ingresar description..."
+    placeholder="Ingresar description"
   ></textarea>
   <div
     *ngIf="
@@ -56,7 +56,7 @@
         class="ingredient-recipe"
         type="text"
         formControlName="ingredient"
-        placeholder="Ingresar ingrediente..."
+        placeholder="Ingresar ingrediente"
       />
 
       <button class="button-delete" type="button" (click)="removeIngredient(i)">

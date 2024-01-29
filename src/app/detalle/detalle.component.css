@@ -1,29 +1,34 @@
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
 .detalle-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: blueviolet;
-  width: 370px;
+  background-color: #00262e;
+  width: 350px;
   height: auto;
   margin: auto;
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-radius: 20px;
+  color: #ffffff;
 }
 
 h2 {
-  color: rgb(0, 0, 0);
   text-align: center;
   width: 100%;
-  border-bottom: 5px solid floralwhite;
+  border-bottom: 3px solid floralwhite;
 }
 
 img {
   width: 320px;
   height: 240px;
-  border: 5px solid floralwhite;
+  border: 3px solid floralwhite;
 }
 
 p {
@@ -31,7 +36,7 @@ p {
   text-align: center;
   width: 90%;
   overflow-y: auto;
-  background-color: aliceblue;
+  color: #ffffff;
 }
 
 /* Estilos para los elementos de la lista de ingredientes */
@@ -52,4 +57,10 @@ p {
 /* Estilos cuando el checkbox está marcado */
 .ingredient-list input[type="checkbox"]:checked + label {
   text-decoration: line-through; /* Tacha el texto del ingrediente cuando el checkbox está marcado */
+}
+
+@media screen and (min-width: 1024px) {
+  .detalle-container {
+    width: 60%;
+  }
 }

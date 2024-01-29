@@ -2,5 +2,7 @@
   <h2>{{ receta.name }}</h2>
   <img [src]="receta.image" alt="Imagen de la receta" />
   <p>{{ receta.description }}</p>
-  <button [routerLink]="['/detalle', receta.id]">Ver Detalles</button>
+  <button (click)="verMas()" [routerLink]="['/detalle', receta.id]">
+    Ver Detalles
+  </button>
 </div>

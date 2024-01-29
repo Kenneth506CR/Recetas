@@ -3,7 +3,8 @@ import { AgregarComponent } from '../agregar/agregar.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { SwitchService } from '../services/switch.service';
 
 @Component({
   selector: 'app-receta',
@@ -14,4 +15,15 @@ import { RouterLink } from '@angular/router';
 })
 export class RecetaComponent {
   @Input() receta: any;
+
+  constructor(private switchService: SwitchService, private router: Router) {}
+
+  /*   verMas() {
+    this.switchService.updateData(this.receta);
+  } */
+
+  verMas() {
+    localStorage.setItem('recetaSeleccionada', JSON.stringify(this.receta));
+    this.router.navigate(['/detalle', this.receta.id]);
+  }
 }

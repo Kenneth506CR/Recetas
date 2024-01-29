@@ -11,12 +11,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './buscador.component.css',
 })
 export class BuscadorComponent {
-  terminoBusqueda: string = '';
-  recetasEncontradas: any[] = [];
-
-  constructor(private switchService: SwitchService) {}
-
-  buscarRecetasPorNombre(): void {
-    this.switchService.buscarRecetasPorNombre(this.terminoBusqueda);
-  }
+  constructor() {}
 }
