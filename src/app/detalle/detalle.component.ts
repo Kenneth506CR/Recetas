@@ -23,12 +23,9 @@ export class DetalleComponent {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id !== null) {
-      // Recuperar las recetas de LocalStorage
       const recetas = localStorage.getItem('recetas');
       if (recetas !== null) {
-        // Convertir las recetas de una cadena JSON a un objeto JavaScript
         const recetasObj = JSON.parse(recetas);
-        // Buscar la receta con el ID dado
         this.receta = recetasObj.find((receta: any) => receta.id === id);
       }
     }
