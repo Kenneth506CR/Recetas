@@ -13,6 +13,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { AlertComponent } from '../alert/alert.component';
 import { SwitchService } from '../services/switch.service';
 import { OnInit } from '@angular/core';
+import { RecetaComponent } from '../receta/receta.component';
 
 @Component({
   selector: 'app-agregar',
@@ -23,6 +24,7 @@ import { OnInit } from '@angular/core';
     HeaderComponent,
     FooterComponent,
     AlertComponent,
+    RecetaComponent,
   ],
   templateUrl: './agregar.component.html',
   styleUrls: ['./agregar.component.css'],
@@ -35,9 +37,12 @@ export class AgregarComponent {
     ingredients: this.fb.array([this.createIngredient()]),
   });
 
+  recetas: any[] = [];
+
   message: string | undefined;
 
   modalSwitch: Boolean | undefined;
+  switchService: any;
 
   constructor(private fb: FormBuilder, private modalSS: SwitchService) {}
 
@@ -69,16 +74,27 @@ export class AgregarComponent {
     return this.recipeForm.get('ingredients') as FormArray;
   }
 
-  onSubmit(): void {
-    console.warn(this.recipeForm.value);
-  }
-
   //Mensaje para el modal
-  enviarMensaje() {
+  onSubmit() {
     if (this.recipeForm.invalid) {
       this.message = 'Por favor, llena todos los campos.';
     } else {
       this.message = 'La receta se guardó correctamente.';
+      console.warn(this.recipeForm.value);
+      this.guardarReceta();
     }
+  }
+
+  // Método para guardar la receta
+  guardarReceta() {
+    // Agregar la receta al arreglo de recetas
+    this.recetas.push(this.recipeForm.value);
+
+    // Guardar los datos en LocalStorage
+    localStorage.setItem('recetas', JSON.stringify(this.recetas));
+
+    // Limpiar el formulario después de guardar la receta
+    this.recipeForm.reset();
+    console.log(this.recetas);
   }
 }
