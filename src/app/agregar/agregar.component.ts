@@ -84,17 +84,24 @@ export class AgregarComponent {
       this.guardarReceta();
     }
   }
-
   // Método para guardar la receta
   guardarReceta() {
-    // Agregar la receta al arreglo de recetas
-    this.recetas.push(this.recipeForm.value);
+    // Recuperar las recetas existentes de LocalStorage
+    let recetasExistentes: any[] | null = localStorage.getItem('recetas')
+      ? JSON.parse(localStorage.getItem('recetas')!)
+      : [];
 
-    // Guardar los datos en LocalStorage
-    localStorage.setItem('recetas', JSON.stringify(this.recetas));
+    // Verificar si recetasExistentes no es null antes de intentar usar push()
+    if (recetasExistentes) {
+      // Agregar la nueva receta al arreglo de recetas existentes
+      recetasExistentes.push(this.recipeForm.value);
 
-    // Limpiar el formulario después de guardar la receta
-    this.recipeForm.reset();
-    console.log(this.recetas);
+      // Guardar los datos en LocalStorage
+      localStorage.setItem('recetas', JSON.stringify(recetasExistentes));
+
+      // Limpiar el formulario después de guardar la receta
+      this.recipeForm.reset();
+      console.log(recetasExistentes);
+    }
   }
 }
