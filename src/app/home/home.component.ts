@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { AlertComponent } from '../alert/alert.component';
@@ -8,8 +8,9 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SwitchService } from '../services/switch.service';
-import { OnInit } from '@angular/core';
 import { DetalleComponent } from '../detalle/detalle.component';
+import { RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,7 @@ import { DetalleComponent } from '../detalle/detalle.component';
     CommonModule,
     FormsModule,
     DetalleComponent,
+    RouterLink,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -31,7 +33,7 @@ import { DetalleComponent } from '../detalle/detalle.component';
 export class HomeComponent {
   recetas: any[] = [];
 
-  constructor(private modalSS: SwitchService) {}
+  constructor(private modalSS: SwitchService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     // Recuperar los datos de LocalStorage

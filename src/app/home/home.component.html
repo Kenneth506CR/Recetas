@@ -6,16 +6,13 @@
       Nuestro sitio web esta dedicado a la recolecion de recetas tipicas de la
       cuchara tica.
     </p>
-    <a class="intro-buton" routerLink="./agregar" href="./agregar"
+    <a class="intro-buton" routerLink="/agregar" href="./agregar"
       >Agregar Receta</a
     >
   </section>
-  <section>
-    <app-detalle *ngFor="let receta of recetas" [receta]="receta"></app-detalle>
-  </section>
-  <!--   <section>
+  <section class="recipes-container">
     <app-receta *ngFor="let receta of recetas" [receta]="receta"></app-receta>
-  </section> -->
+  </section>
 </main>
 
 <app-footer />

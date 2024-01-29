@@ -36,6 +36,17 @@
   font-size: 1.1rem;
 }
 
+.recipes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 @media screen and (min-width: 1024px) {
   .intro {
     background-size: cover;

@@ -2,10 +2,5 @@
   <h2>{{ receta.name }}</h2>
   <img [src]="receta.image" alt="Imagen de la receta" />
   <p>{{ receta.description }}</p>
-  <button>Ver Detalles</button>
-  <!--   <ul>
-    <li *ngFor="let ingredient of receta.ingredients">
-      {{ ingredient.ingredient }}
-    </li>
-  </ul> -->
+  <button [routerLink]="['/detalle', receta.id]">Ver Detalles</button>
 </div>

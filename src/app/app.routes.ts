@@ -21,7 +21,7 @@ export const routes: Routes = [
     component: AgregarComponent,
   },
   {
-    path: 'detales',
+    path: 'detalle/:id',
     title: 'Details Recipe',
     component: DetalleComponent,
   },
