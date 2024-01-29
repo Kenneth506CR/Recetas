@@ -9,7 +9,10 @@
     <a class="intro-button" routerLink="/agregar" href="./agregar"
       >Agregar Receta</a
     >
+
+    <app-buscador></app-buscador>
   </section>
+
   <section class="recipes-container">
     <!-- Verificar si hay recetas -->
     <ng-container *ngIf="recetas && recetas.length > 0; else noRecipes">

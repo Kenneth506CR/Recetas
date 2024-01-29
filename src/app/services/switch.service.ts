@@ -10,7 +10,7 @@ export class SwitchService {
   //Datos de las recetas
   private data = new BehaviorSubject<any>(null);
   sharedData = this.data.asObservable();
-  recetas: any;
+  recetas: any[] = [];
 
   constructor() {}
 
@@ -21,5 +21,12 @@ export class SwitchService {
   // Método para obtener una receta por su ID
   getRecetaPorId(id: string) {
     return this.recetas.find((receta: { id: string }) => receta.id === id);
+  }
+
+  buscarRecetasPorNombre(termino: string): void {
+    const recetasFiltradas = this.recetas.filter((receta) =>
+      receta.nombre.toLowerCase().includes(termino.toLowerCase())
+    );
+    this.updateData(recetasFiltradas);
   }
 }

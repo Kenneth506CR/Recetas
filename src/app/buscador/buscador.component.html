@@ -1,0 +1,21 @@
+<div class="buscar-container">
+  <input
+    type="text"
+    [(ngModel)]="terminoBusqueda"
+    placeholder="Buscar recetas por nombre"
+  />
+  <button (click)="buscarRecetasPorNombre()">Buscar</button>
+</div>
+
+<div *ngIf="recetasEncontradas && recetasEncontradas.length > 0">
+  <h3>Recetas encontradas:</h3>
+  <ul>
+    <li *ngFor="let receta of recetasEncontradas">
+      {{ receta.nombre }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="recetasEncontradas && recetasEncontradas.length === 0">
+  <p>No se encontraron recetas.</p>
+</div>

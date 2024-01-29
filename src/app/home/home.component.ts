@@ -11,6 +11,7 @@ import { SwitchService } from '../services/switch.service';
 import { DetalleComponent } from '../detalle/detalle.component';
 import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { BuscadorComponent } from '../buscador/buscador.component';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,7 @@ import { ActivatedRoute } from '@angular/router';
     FormsModule,
     DetalleComponent,
     RouterLink,
+    BuscadorComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

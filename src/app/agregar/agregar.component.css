@@ -3,13 +3,14 @@ form {
   flex-direction: column;
   width: 360px;
   margin: auto;
-  background-color: rgb(179, 204, 204);
-  border-radius: 15px;
+  background-color: #000e12de;
+  border-radius: 25px;
   align-items: center;
   height: auto;
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  color: #ffffff;
 }
 
 input[type="text"],

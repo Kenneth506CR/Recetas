@@ -1,44 +1,48 @@
 .receta-container {
+  font-family: var(--montserrat);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(129, 129, 129);
+  background-color: #00262e;
   border-radius: 15px;
   height: 350px;
   width: 275px;
   margin: auto;
   padding: 1rem;
   align-items: center;
-  border: 5px solid firebrick;
+  border: 3px solid #ffffff;
 }
 
 h2 {
-  color: black;
-  border-bottom: 5px solid firebrick;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
   width: 100%;
   text-align: center;
 }
 
 img {
-  width: 200px;
-  height: 175px;
-  border: 2px solid firebrick;
+  width: 250px;
+  height: 300px;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
 }
 
 p {
+  color: #ffffff;
   font-size: 0.8rem;
   text-align: center;
-  border-top: 5px solid firebrick;
+  border-top: 2px solid #ffffff;
   width: 100%;
-  min-height: 100px;
+  min-height: 45px;
   overflow-y: auto;
-  background-color: aliceblue;
+  background-color: #00262e;
+  padding: 5px;
 }
 
 button {
   font-size: 1rem;
   background-color: black;
-  color: blanchedalmond;
+  color: #ffffff;
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
@@ -46,5 +50,5 @@ button {
 }
 
 button:hover {
-  background-color: rgb(34, 34, 34);
+  background-color: rgba(0, 0, 0, 0.747);
 }
