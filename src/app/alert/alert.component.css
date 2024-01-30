@@ -1,15 +1,14 @@
 .modal-container {
-  background-color: rgb(167, 167, 187);
-  width: 400px;
-  height: 450px;
+  background-color: #000000;
+  /* 00262e */
+  width: 300px;
+  height: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 5%;
+  border-radius: 8%;
   border-style: solid;
   transform: translate(-50%, -50%);
   position: fixed;
@@ -18,23 +17,30 @@
 }
 
 .modal-title {
-  font-size: 2rem;
-  color: aliceblue;
-  border-bottom: 2px solid #000000;
+  font-size: 1.5rem;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
   width: 100%;
+  text-align: center;
+}
+
+.modal-text {
+  font-size: 1.3rem;
+  color: #ffffff;
   text-align: center;
 }
 
 .modal-button {
   cursor: pointer;
   margin-bottom: 2rem;
-  padding: 1rem 3rem;
+  padding: 0.7rem 2rem;
   font-size: 1.2rem;
-  background-color: rgb(112, 122, 23);
+  background-color: #00262e;
   color: aliceblue;
   border: none;
+  border-radius: 10px;
 }
 
 .modal-button:hover {
-  background-color: rgb(97, 196, 31);
+  background-color: #00262ec0;
 }

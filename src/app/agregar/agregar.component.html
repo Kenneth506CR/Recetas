@@ -1,78 +1,83 @@
 <app-header />
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+<div class="form-container">
   <h1>Agregar Receta</h1>
-
-  <input
-    class="name-recipe"
-    type="text"
-    formControlName="name"
-    placeholder="Ingresar nombre de receta"
-  />
-  <div
-    *ngIf="
-      recipeForm.controls.name.invalid &&
-      (recipeForm.controls.name.dirty || recipeForm.controls.name.touched)
-    "
-    class="error-message"
-  >
-    Este campo es requerido.
-  </div>
-
-  <textarea
-    class="description-recipe"
-    formControlName="description"
-    placeholder="Ingresar description"
-  ></textarea>
-  <div
-    *ngIf="
-      recipeForm.controls.description.invalid &&
-      (recipeForm.controls.description.dirty ||
-        recipeForm.controls.description.touched)
-    "
-    class="error-message"
-  >
-    Este campo es requerido.
-  </div>
-
-  <h3>Cargar Imagen</h3>
-  <input type="file" formControlName="image" />
-  <div
-    *ngIf="
-      recipeForm.controls.image.invalid &&
-      (recipeForm.controls.image.dirty || recipeForm.controls.image.touched)
-    "
-    class="error-message"
-  >
-    Este campo es requerido.
-  </div>
-  <h3>Ingredientes</h3>
-  <div formArrayName="ingredients">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <input
+      class="name-recipe"
+      type="text"
+      formControlName="name"
+      placeholder="Ingresar nombre de receta"
+    />
     <div
-      *ngFor="let ingredient of ingredients.controls; let i = index"
-      [formGroupName]="i"
-      class="ingredient-group"
+      *ngIf="
+        recipeForm.controls.name.invalid &&
+        (recipeForm.controls.name.dirty || recipeForm.controls.name.touched)
+      "
+      class="error-message"
     >
-      <input
-        class="ingredient-recipe"
-        type="text"
-        formControlName="ingredient"
-        placeholder="Ingresar ingrediente"
-      />
+      Este campo es requerido.
+    </div>
 
-      <button class="button-delete" type="button" (click)="removeIngredient(i)">
-        Eliminar
+    <textarea
+      class="description-recipe"
+      formControlName="description"
+      placeholder="Ingresar description"
+    ></textarea>
+    <div
+      *ngIf="
+        recipeForm.controls.description.invalid &&
+        (recipeForm.controls.description.dirty ||
+          recipeForm.controls.description.touched)
+      "
+      class="error-message"
+    >
+      Este campo es requerido.
+    </div>
+
+    <h3>Cargar Imagen</h3>
+    <input type="file" formControlName="image" />
+    <div
+      *ngIf="
+        recipeForm.controls.image.invalid &&
+        (recipeForm.controls.image.dirty || recipeForm.controls.image.touched)
+      "
+      class="error-message"
+    >
+      Este campo es requerido.
+    </div>
+    <h3>Ingredientes</h3>
+    <div formArrayName="ingredients">
+      <div
+        *ngFor="let ingredient of ingredients.controls; let i = index"
+        [formGroupName]="i"
+        class="ingredient-group"
+      >
+        <input
+          class="ingredient-recipe"
+          type="text"
+          formControlName="ingredient"
+          placeholder="Ingresar ingrediente"
+        />
+
+        <button
+          class="button-delete"
+          type="button"
+          (click)="removeIngredient(i)"
+        >
+          Eliminar
+        </button>
+      </div>
+      <button class="button-add" type="button" (click)="addIngredient()">
+        Agregar ingrediente
       </button>
     </div>
-    <button class="button-add" type="button" (click)="addIngredient()">
-      Agregar ingrediente
-    </button>
-  </div>
 
-  <button class="button-save" (click)="openModal()" type="submit">
-    Guardar
-  </button>
-  <div class="modal" *ngIf="modalSwitch == true">
-    <app-alert [message]="message" />
-  </div>
-</form>
+    <button class="button-save" (click)="openModal()" type="submit">
+      Guardar
+    </button>
+    <div class="modal" *ngIf="modalSwitch == true">
+      <app-alert [message]="message" />
+    </div>
+  </form>
+</div>
 <app-footer />

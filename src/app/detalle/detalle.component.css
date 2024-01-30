@@ -1,6 +1,14 @@
+body {
+  background-color: #00262e;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 h1 {
+  font-size: 1.7rem;
   text-align: center;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .detalle-container {
@@ -8,27 +16,24 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #00262e;
+  background-color: #ffffffee;
   width: 350px;
   height: auto;
   margin: auto;
-  padding: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 20px;
-  color: #ffffff;
+  border-radius: 35px;
+  color: #000000;
 }
 
 h2 {
   text-align: center;
   width: 100%;
-  border-bottom: 3px solid floralwhite;
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 img {
   width: 320px;
-  height: 240px;
-  border: 3px solid floralwhite;
+  height: 250px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 p {
@@ -36,7 +41,7 @@ p {
   text-align: center;
   width: 90%;
   overflow-y: auto;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Estilos para los elementos de la lista de ingredientes */
@@ -61,6 +66,10 @@ p {
 
 @media screen and (min-width: 1024px) {
   .detalle-container {
-    width: 60%;
+    width: 50%;
+  }
+
+  img {
+    width: 400px;
   }
 }

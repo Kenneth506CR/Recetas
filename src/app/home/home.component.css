@@ -49,6 +49,7 @@ main {
   gap: 20px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  background-color: #ffffffee;
 }
 
 .no-recipes-message {
