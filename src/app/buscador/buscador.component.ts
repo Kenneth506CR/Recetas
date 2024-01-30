@@ -19,17 +19,19 @@ export class BuscadorComponent implements OnInit {
 
   constructor(private switchService: SwitchService, private router: Router) {}
 
-  // buscador.ts
+  //Selecciona la receta, se guarda en local storage y redireciona a los detalles de dicha receta
   verMas(index: number) {
     const receta = this.filteredRecipes[index];
     localStorage.setItem('recetaSeleccionada', JSON.stringify(receta));
     this.router.navigate(['/detalle', index]);
   }
 
+  //Se obtiene la lista de recetas al iniciar
   ngOnInit() {
     this.recetas = JSON.parse(localStorage.getItem('recetas') || '[]');
   }
 
+  //Realiza la busqueda de la receta luego de ingresar algun string
   get filteredRecipes() {
     if (this.searchText && this.searchText.length > 0) {
       return this.recetas.filter((receta) =>
@@ -40,11 +42,8 @@ export class BuscadorComponent implements OnInit {
     }
   }
 
+  //Focus para input de buscador
   onFocus() {
     this.showResults = true;
-  }
-
-  onBlur() {
-    this.showResults = false;
   }
 }

@@ -11,17 +11,17 @@ import { Router } from '@angular/router';
   styleUrl: './alert.component.css',
 })
 export class AlertComponent {
-  constructor(private router: Router, private modalSS: SwitchService) {}
-
   @Input() message: string | undefined;
 
-  closeModal() {
-    this.modalSS.$modal.emit(false); // Cierra el modal
+  constructor(private router: Router, private modalSS: SwitchService) {}
 
-    // Verifica si el mensaje es "La receta se guardó correctamente"
+  //Cerrar el modal de alert
+  closeModal() {
+    this.modalSS.$modal.emit(false);
+
+    // Verifica el mensaje y redirecciona
     if (this.message == 'La receta se guardó correctamente.') {
-      // Redirige al usuario a la página de inicio
-      this.router.navigate(['/inicio']); // Aquí se produce el error
+      this.router.navigate(['/inicio']);
       console.log('Deberia rediriguir');
     }
   }

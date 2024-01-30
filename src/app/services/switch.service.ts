@@ -7,7 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 export class SwitchService {
   //Activador del modal
   $modal = new EventEmitter<any>();
-  //Datos de las recetas
+
+  //Guardar datos de las recetas
   private data = new BehaviorSubject<any>(null);
   sharedData = this.data.asObservable();
 

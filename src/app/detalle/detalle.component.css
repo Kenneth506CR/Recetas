@@ -44,7 +44,6 @@ p {
   color: #000000;
 }
 
-/* Estilos para los elementos de la lista de ingredientes */
 .ingredient-list {
   list-style-type: none;
   padding: 0;
@@ -54,14 +53,12 @@ p {
   margin-bottom: 5px;
 }
 
-/* Estilos para las etiquetas de los checkboxes */
 .ingredient-list label {
   cursor: pointer;
 }
 
-/* Estilos cuando el checkbox está marcado */
 .ingredient-list input[type="checkbox"]:checked + label {
-  text-decoration: line-through; /* Tacha el texto del ingrediente cuando el checkbox está marcado */
+  text-decoration: line-through;
 }
 
 @media screen and (min-width: 1024px) {

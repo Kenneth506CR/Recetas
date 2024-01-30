@@ -18,6 +18,7 @@ export class RecetaComponent {
 
   constructor(private switchService: SwitchService, private router: Router) {}
 
+  //Selecciona la receta para mostrar los detalles
   verMas() {
     localStorage.setItem('recetaSeleccionada', JSON.stringify(this.receta));
     this.router.navigate(['/detalle', this.receta.id]);

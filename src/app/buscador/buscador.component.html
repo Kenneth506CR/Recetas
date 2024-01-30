@@ -1,4 +1,3 @@
-<!-- buscador.html -->
 <div class="buscar-container">
   <input
     type="text"
@@ -11,7 +10,6 @@
     *ngFor="let receta of showResults ? filteredRecipes : []; let i = index"
   >
     <div class="result-recipe">
-      <!-- Aquí puedes mostrar la receta como prefieras -->
       <p>
         <a (click)="verMas(i)" [routerLink]="['/detalle', i]">{{
           receta.name

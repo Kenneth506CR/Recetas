@@ -14,13 +14,14 @@ import { SwitchService } from '../services/switch.service';
   styleUrl: './detalle.component.css',
 })
 export class DetalleComponent {
-  receta: any; // No es un array
+  receta: any;
 
   constructor(
     private switchService: SwitchService,
     private route: ActivatedRoute
   ) {}
 
+  //Seleccionar la receta asignada
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     const storedReceta = localStorage.getItem('recetaSeleccionada');

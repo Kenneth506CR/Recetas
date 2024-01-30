@@ -42,16 +42,14 @@ export class HomeComponent {
     private switchService: SwitchService
   ) {}
 
+  // Recuperar los datos de LocalStorage y suscribir a actualizaciones
   ngOnInit() {
-    // Recuperar los datos de LocalStorage
     const recetas = localStorage.getItem('recetas');
     this.recetas = recetas ? JSON.parse(recetas) : [];
 
-    // Suscribirse a sharedData para recibir las actualizaciones de la receta seleccionada
     this.switchService.sharedData.subscribe((data) => {
       this.recetaSeleccionada = data;
     });
-
     console.log(this.recetas);
   }
 }

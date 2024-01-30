@@ -9,29 +9,31 @@
     <a class="intro-button" routerLink="/agregar" href="./agregar"
       >Agregar Receta</a
     >
-
     <app-buscador></app-buscador>
   </section>
 
   <section class="recipes-container">
-    <!-- Verificar si hay recetas -->
     <ng-container *ngIf="recetas && recetas.length > 0; else noRecipes">
-      <!-- Mostrar la última receta agregada -->
-
       <div class="last-recipe">
         <h2>Nueva Receta</h2>
+        @defer (on viewport) {
         <app-receta [receta]="recetas[recetas.length - 1]"></app-receta>
+        } @placeholder {
+        <p>Cargando receta...</p>
+        }
       </div>
-      <!-- Mostrar el resto de las recetas -->
       <h2 class="title-others">Otras Recetas</h2>
       <div class="other-recipes">
+        @defer (on viewport) {
         <app-receta
           *ngFor="let receta of recetas.slice(0, -1).reverse()"
           [receta]="receta"
         ></app-receta>
+        } @placeholder{
+        <p>Cargando recetas...</p>
+        }
       </div>
     </ng-container>
-    <!-- Si no hay recetas, mostrar mensaje -->
     <ng-template #noRecipes>
       <p class="no-recipes-message">Registro de recetas vacío.</p>
     </ng-template>

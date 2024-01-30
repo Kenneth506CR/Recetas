@@ -1,5 +1,4 @@
 .receta-container {
-  font-family: var(--montserrat);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
