@@ -18,10 +18,6 @@ export class RecetaComponent {
 
   constructor(private switchService: SwitchService, private router: Router) {}
 
-  /*   verMas() {
-    this.switchService.updateData(this.receta);
-  } */
-
   verMas() {
     localStorage.setItem('recetaSeleccionada', JSON.stringify(this.receta));
     this.router.navigate(['/detalle', this.receta.id]);

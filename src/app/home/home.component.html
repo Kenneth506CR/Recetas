@@ -16,11 +16,20 @@
   <section class="recipes-container">
     <!-- Verificar si hay recetas -->
     <ng-container *ngIf="recetas && recetas.length > 0; else noRecipes">
-      <!-- Mostrar las recetas en orden inverso -->
-      <app-receta
-        *ngFor="let receta of recetas.reverse()"
-        [receta]="receta"
-      ></app-receta>
+      <!-- Mostrar la última receta agregada -->
+
+      <div class="last-recipe">
+        <h2>Nueva Receta</h2>
+        <app-receta [receta]="recetas[recetas.length - 1]"></app-receta>
+      </div>
+      <!-- Mostrar el resto de las recetas -->
+      <h2 class="title-others">Otras Recetas</h2>
+      <div class="other-recipes">
+        <app-receta
+          *ngFor="let receta of recetas.slice(0, -1).reverse()"
+          [receta]="receta"
+        ></app-receta>
+      </div>
     </ng-container>
     <!-- Si no hay recetas, mostrar mensaje -->
     <ng-template #noRecipes>

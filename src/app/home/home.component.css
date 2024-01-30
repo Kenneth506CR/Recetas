@@ -13,6 +13,7 @@ main {
   background-color: #00161c;
   padding-top: 2.25rem;
   padding-bottom: 2.5rem;
+  justify-content: center;
 }
 
 .intro-title {
@@ -20,13 +21,14 @@ main {
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .intro-text {
   font-size: 1.25rem;
   line-height: normal;
   margin: 0 auto 2.5rem;
+  padding: 1rem;
 }
 
 .intro-button {
@@ -41,15 +43,12 @@ main {
 }
 
 .recipes-container {
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: #ffffffee;
 }
 
 .no-recipes-message {
@@ -57,6 +56,42 @@ main {
   font-weight: bold;
   padding: 3rem;
   text-align: center;
+}
+
+.recipes-wrapper {
+  width: 100%;
+  display: flex;
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.last-recipe {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 500px;
+  zoom: 1.2;
+}
+.title-others {
+  background-color: black;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.other-recipes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 3rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -68,5 +103,9 @@ main {
   .intro-title {
     font-size: 3.25rem;
     margin-bottom: 2rem;
+  }
+
+  .last-recipe {
+    zoom: 1.3;
   }
 }
