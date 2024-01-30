@@ -35,7 +35,15 @@
     </div>
 
     <h3>Cargar Imagen</h3>
-    <input type="file" formControlName="image" />
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+      formControlName="image"
+    />
+    <div class="img-container">
+      <img [src]="imgURL" *ngIf="imgURL" />
+    </div>
+
     <div
       *ngIf="
         recipeForm.controls.image.invalid &&

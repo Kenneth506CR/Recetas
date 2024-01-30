@@ -38,11 +38,10 @@ export class AgregarComponent {
   });
 
   recetas: any[] = [];
-
   message: string | undefined;
-
   modalSwitch: Boolean | undefined;
   switchService: any;
+  imgURL: any;
 
   constructor(private fb: FormBuilder, private modalSS: SwitchService) {}
 
@@ -102,6 +101,22 @@ export class AgregarComponent {
       // Limpiar el formulario después de guardar la receta
       this.recipeForm.reset();
       console.log(recetasExistentes);
+    }
+  }
+
+  onFileSelected(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(target.files[0]); // Lee el archivo como una URL de datos.
+
+      reader.onload = (event) => {
+        // Se llama una vez que se ha leído el archivo.
+        this.imgURL = (event.target as FileReader).result;
+        // Guarda la URL de los datos de la imagen en el formulario.
+        this.recipeForm.controls['image'].setValue(this.imgURL);
+      };
     }
   }
 }
